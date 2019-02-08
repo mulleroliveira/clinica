@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i> Lista de Médicos</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="/atendimento/">Home</a></li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>DATA_NASCIMENTO</th>
+                    <th>CPF</th>
+                    <th>SEXO</th>
+                    <th>PESO</th>
+                    <th>TAMANHO</th>
+                    <th>EMAIL</th>
+                    <th>TELEFONE</th>
+                    <th>GRAU DE INSTRUÇÃO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for medico in medicos %}
+                <tr>
+                    <td>{{medico.nome}}</td>
+                    <td>{{medico.data_nasc | date:'d/m/Y'}}</td>
+                    <td>{{medico.cpf}}</td>
+                    <td>{{medico.sexo}}</td>
+                    <td>{{medico.peso}}</td>
+                    <td>{{medico.tamanho}}</td>
+                    <td>{{medico.email}}</td>
+                    <td>{{medico.telefone}}</td>
+                    <td>{{medico.grau_instrução}}</td>
+                    <td><a href="/atendimento/medico/{{medico.id}}">Ver</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: left;">
+                        <p>O sistema encontrou {{medicos | length}} medico(s) cadastrado(s)</p>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+{% endblock %}

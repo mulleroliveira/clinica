@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Cliente Form
+            </header>
+            <div class="panel-body">
+                <form action="/atendimento/cliente/form/" method="POST" class="form-validate">
+                    {% csrf_token %}
+                    {% for c in form %}
+                    <div class="form-group">
+                        <label for="{{c.id_for_label}}">{{c.label}}</label>
+                        <div>
+                            {{c}}
+                            {% for error in c.errors %}
+                            <label for="{{c.id_for_label}}" class="error">{{error}}</label>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

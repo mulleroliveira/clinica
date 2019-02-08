@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12 col-md-12 col-lg-12">
+        <div class="jumbotron">
+            <h1 class="display-4">Clinica</h1>
+            <p class="lead">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus odit quia aut aliquam
+                soluta suscipit, velit
+                ad dolorum deleniti nulla. Sequi error maiores iste quo praesentium voluptatum numquam nisi mollitia.
+                content
+                or information.</p>
+            <hr class="my-4">
+            <p>Conheça abaixo as opções do sistema</p>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'img/medico.png' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Médico</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="/atendimento/medico" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'img/consulta.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Consulta</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'img/home.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Home</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="/atendimento" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{% static 'img/cliente.jpg' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Cliente</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a href="/atendimento/cliente" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

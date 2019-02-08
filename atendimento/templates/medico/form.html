@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Medico Form
+            </header>
+            <div class="panel-body">
+                <form action="/atendimento/medico/form/" method="POST">
+                    {% csrf_token %}
+                    {% for c in form %}
+                    <div class="form-group">
+                        <label for="c.id_for_label">{{c.label}}</label>
+                        {{c}}
+                        {{c.errors}}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

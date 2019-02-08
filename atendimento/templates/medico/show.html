@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Detalhes do cliente!</h1>
+<div>
+    <label>Nome:</label>
+    {{medico.nome}}
+</div>
+<div>
+    <label>Dt Nasc:</label>
+    {{medico.data_nasc | date:"d/m/Y"}}
+</div>
+<div>
+    <label>CPF:</label>
+    {{medico.cpf}}
+</div>
+<div>
+    <label>Sexo:</label>
+    {{medico.sexo}}
+</div>
+<div>
+    <label>peso:</label>
+    {{medico.peso}}
+</div>
+<div>
+    <label>tamanho:</label>
+    {{medico.tamanho}}
+</div>
+<div>
+    <label>email:</label>
+    {{medico.email}}
+</div>
+<div>
+    <label>telefone:</label>
+    {{medico.telefone}}
+</div>
+<div>
+    <label>grau_instrução:</label>
+    {{medico.grau_instrução}}
+</div>
+{% endblock %}

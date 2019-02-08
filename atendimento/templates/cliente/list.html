@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h3 class="page-header"><i class="fa fa-laptop"></i> Lista de Clientes</h3>
+        <ol class="breadcrumb">
+            <li><i class="fa fa-home"></i><a href="/atendimento/">Home</a></li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data De Nascimento</th>
+                    <th>CPF</th>
+                    <th>Sexo</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                <tr>
+                    <td>{{cliente.nome}}</td>
+                    <td>{{cliente.dt_nasc | date:'d/m/Y'}}</td>
+                    <td>{{cliente.cpf}}</td>
+                    <td>{{cliente.sexo}}</td>
+                    <td>{{cliente.id}}</td>
+                    <td>
+                        <a href="/atendimento/cliente/{{cliente.id}}/">Detalhes</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4" style="text-align: left;">
+                        <p>O sistema encontrou {{clientes | length}} cliente(s) cadastrado(s)</p>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+{% endblock %}
+</body>
+
+</html>
