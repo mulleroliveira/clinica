@@ -37,7 +37,11 @@
                     <td>{{medico.email}}</td>
                     <td>{{medico.telefone}}</td>
                     <td>{{medico.grau_instrução}}</td>
-                    <td><a href="/atendimento/medico/{{medico.id}}">Ver</a></td>
+                    <td>
+                        <a href="/atendimento/medico/{{medico.id}}">Ver</a>
+                        |
+                        <a href="//atendimento/medico/{{medico.id}}/edit/">Editar</a>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

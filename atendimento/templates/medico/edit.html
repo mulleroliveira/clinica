@@ -7,7 +7,7 @@
                 Medico Form
             </header>
             <div class="panel-body">
-                <form action="/atendimento/medico/form/" method="POST" class="form-validate">
+                <form action="/atendimento/medico/{{medico_id}}/edit/" method="POST" class="form-validate">
                     {% csrf_token %}
                     {% for c in form %}
                     <div class="form-group">
